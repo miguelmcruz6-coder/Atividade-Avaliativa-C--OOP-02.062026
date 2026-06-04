@@ -24,8 +24,7 @@ namespace RotinaBackEnd.Rotinas
             ExibirCabecalho();
 
             // Carrega as configurações do sistema
-            Configuracao config =
-                ConfigService.Carregar();
+            Configuracao config = ConfigService.Carregar();
 
             // Solicita a pasta de origem
             Console.Write("Pasta origem: ");
@@ -34,20 +33,15 @@ namespace RotinaBackEnd.Rotinas
             // Obtém a pasta de destino configurada
             destino = config.PastaBackup;
 
-            Console.WriteLine(
-                $"Destino automático: {destino}");
-
+            Console.WriteLine($"Destino automático: {destino}");
             Console.WriteLine("Realizando backup...");
 
             // Simula o tempo necessário para realizar o backup
             Thread.Sleep(2000);
-
             Console.WriteLine("Backup concluído!");
 
             // Registra a execução da rotina
-            string log =
-                $"Backup realizado de {origem} para {destino}";
-
+            string log =$"Backup realizado de {origem} para {destino}";
             AdicionarLog(log);
             LogService.Salvar(log);
 

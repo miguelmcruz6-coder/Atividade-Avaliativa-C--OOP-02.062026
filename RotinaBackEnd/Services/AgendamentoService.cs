@@ -11,8 +11,7 @@ namespace RotinaBackEnd.Services
             int segundos)
         {
             // Informa o tempo restante para execução
-            Console.WriteLine(
-                $"Executando em {segundos} segundos...");
+            Console.WriteLine($"Executando em {segundos} segundos...");
 
             // Aguarda o tempo definido
             Thread.Sleep(segundos * 1000);

@@ -10,9 +10,7 @@ namespace RotinaBackEnd.Rotinas
         // Quantidade de arquivos removidos
         private int arquivosRemovidos;
 
-        public LimpezaTemp() : base("Limpeza de Temporários")
-        {
-        }
+        public LimpezaTemp() : base("Limpeza de Temporários"){}
 
         public override void Executar()
         {

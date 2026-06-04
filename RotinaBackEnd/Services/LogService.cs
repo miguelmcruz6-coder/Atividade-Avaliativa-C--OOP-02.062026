@@ -4,8 +4,7 @@ namespace RotinaBackEnd.Services
     public static class LogService
     {
         // Caminho do arquivo onde os logs serão armazenados
-        private static readonly string caminho =
-            "Logs/logs.txt";
+        private static readonly string caminho = "Logs/logs.txt";
 
         // Salva uma mensagem de log no arquivo
         public static void Salvar(string mensagem)
@@ -26,8 +25,7 @@ namespace RotinaBackEnd.Services
             if (File.Exists(caminho))
             {
                 // Exibe o conteúdo completo do arquivo
-                Console.WriteLine(
-                    File.ReadAllText(caminho));
+                Console.WriteLine(File.ReadAllText(caminho));
             }
             else
             {

@@ -7,8 +7,7 @@ namespace RotinaBackEnd.Services
     public static class ConfigService
     {
         // Caminho do arquivo de configuração
-        private static readonly string caminho =
-            "config.json";
+        private static readonly string caminho = "config.json";
 
         // Carrega as configurações salvas no arquivo
         public static Configuracao Carregar()
@@ -23,8 +22,7 @@ namespace RotinaBackEnd.Services
             string json = File.ReadAllText(caminho);
 
             // Converte o JSON para o objeto Configuracao
-            return JsonSerializer.Deserialize<Configuracao>(json)
-                   ?? new Configuracao();
+            return JsonSerializer.Deserialize<Configuracao>(json)   ?? new Configuracao();
         }
 
         // Salva as configurações no arquivo JSON

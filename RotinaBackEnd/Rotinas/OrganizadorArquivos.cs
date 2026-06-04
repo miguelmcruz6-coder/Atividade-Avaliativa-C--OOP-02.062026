@@ -6,10 +6,7 @@ namespace RotinaBackEnd.Rotinas
     // Rotina responsável por organizar arquivos por categoria
     public class OrganizadorArquivos : RotinaBase
     {
-        public OrganizadorArquivos() :
-            base("Organizador de Arquivos")
-        {
-        }
+        public OrganizadorArquivos() : base("Organizador de Arquivos"){}
 
         public override void Executar()
         {
@@ -22,9 +19,7 @@ namespace RotinaBackEnd.Rotinas
             Console.WriteLine("Separando documentos...");
 
             // Registra a execução da rotina
-            string log =
-                "Arquivos organizados por categoria.";
-
+            string log = "Arquivos organizados por categoria.";
             AdicionarLog(log);
             LogService.Salvar(log);
 
