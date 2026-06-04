@@ -3,6 +3,7 @@ using RotinaBackEnd.Services;
 
 namespace RotinaBackEnd.Rotinas
 {
+    // Rotina responsável por exibir informações do sistema
     public class DiagnosticoSistema : RotinaBase
     {
         public DiagnosticoSistema() :
@@ -12,8 +13,10 @@ namespace RotinaBackEnd.Rotinas
 
         public override void Executar()
         {
+            // Exibe informações da rotina
             ExibirCabecalho();
 
+            // Exibe informações básicas do ambiente
             Console.WriteLine(
                 $"Máquina: {Environment.MachineName}");
 
@@ -26,13 +29,14 @@ namespace RotinaBackEnd.Rotinas
             Console.WriteLine(
                 $"Data/Hora: {DateTime.Now}");
 
+            // Registra a execução da rotina
             string log =
                 "Diagnóstico realizado.";
 
             AdicionarLog(log);
-
             LogService.Salvar(log);
 
+            // Atualiza contador de execuções
             IncrementarExecucao();
         }
     }
