@@ -104,35 +104,30 @@ while (executando)
 
                 // Executa a rotina de limpeza.
                 rotinas[0].Executar();
-
                 break;
 
             case 2:
 
                 // Executa monitoramento de memória.
                 rotinas[1].Executar();
-
                 break;
 
             case 3:
 
                 // Executa backup.
                 rotinas[2].Executar();
-
                 break;
 
             case 4:
 
                 // Executa organização de arquivos.
                 rotinas[3].Executar();
-
                 break;
 
             case 5:
 
                 // Executa diagnóstico.
                 rotinas[4].Executar();
-
                 break;
 
             case 6:
@@ -149,29 +144,23 @@ while (executando)
 
                 // Exibe os logs armazenados.
                 LogService.MostrarLogs();
-
                 break;
 
             case 8:
 
                 // Agenda uma execução da rotina de limpeza.
-                AgendamentoService.ExecutarComAtraso(
-                    new LimpezaTemp(),
-                    5);
-
+                AgendamentoService.ExecutarComAtraso(new LimpezaTemp(), 5);
                 break;
 
             case 0:
 
                 // Encerra o sistema.
                 executando = false;
-
                 break;
 
             default:
 
                 Console.WriteLine("Opção inválida!");
-
                 break;
         }
     }
