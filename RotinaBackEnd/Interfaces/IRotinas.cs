@@ -4,6 +4,7 @@ namespace RotinaBackEnd.Interfaces
     // obrigatório para qualquer rotina.
     public interface IRotina
     {
+
         // Método principal da rotina.
         void Executar();
 

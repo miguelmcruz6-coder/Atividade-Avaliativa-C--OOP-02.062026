@@ -6,7 +6,7 @@ namespace RotinaBackEnd.Rotinas
     // Rotina responsável por organizar arquivos por categoria
     public class OrganizadorArquivos : RotinaBase
     {
-        public OrganizadorArquivos() : base("Organizador de Arquivos"){}
+        public OrganizadorArquivos(string nome) : base("Organizador de Arquivos", nome){}
 
         public override void Executar()
         {

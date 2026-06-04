@@ -13,10 +13,7 @@ namespace RotinaBackEnd.Rotinas
         // Pasta de destino do backup
         private string destino;
 
-        public BackupRotina() :
-            base("Backup Automático")
-        {
-        }
+        public BackupRotina(string nome) : base("Backup Automático", nome){}
 
         public override void Executar()
         {

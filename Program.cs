@@ -10,25 +10,23 @@ using RotinaBackEnd.Services;
 
 // Importa os modelos de dados.
 using RotinaBackEnd.Models;
+using RotinaBackEnd.Base;
 
 // =======================================================
 // CRIAÇÃO DO OBJETO USUÁRIO
 // =======================================================
 
-// Instancia um novo usuário.
-Usuario usuario = new Usuario();
-
 // Solicita o nome do usuário.
 Console.Write("Nome do usuário: ");
 
 // Armazena o valor digitado na propriedade Nome.
-usuario.Nome = Console.ReadLine();
+string usuario = Console.ReadLine();
 
 // Solicita o e-mail.
 Console.Write("E-mail: ");
 
 // Armazena o e-mail informado.
-usuario.Email = Console.ReadLine();
+string email = Console.ReadLine();
 
 // Exibe uma linha em branco para melhorar a visualização.
 Console.WriteLine();
@@ -49,11 +47,9 @@ Configuracao config = ConfigService.Carregar();
 // Exibe as configurações carregadas.
 Console.WriteLine("Configuração carregada:");
 
-Console.WriteLine(
-    $"Limite de memória: {config.LimiteMemoria}%");
+Console.WriteLine($"Limite de memória: {config.LimiteMemoria}%");
 
-Console.WriteLine(
-    $"Pasta backup: {config.PastaBackup}");
+Console.WriteLine($"Pasta backup: {config.PastaBackup}");
 
 // =======================================================
 // LISTA DE ROTINAS
@@ -63,11 +59,11 @@ Console.WriteLine(
 // O uso da interface IRotina permite polimorfismo.
 List<IRotina> rotinas = new List<IRotina>()
 {
-    new LimpezaTemp(),
-    new MonitorMemoria(),
-    new BackupRotina(),
-    new OrganizadorArquivos(),
-    new DiagnosticoSistema()
+    new LimpezaTemp(usuario),
+    new MonitorMemoria(usuario),
+    new BackupRotina(usuario),
+    new OrganizadorArquivos(usuario),
+    new DiagnosticoSistema(usuario)
 };
 
 // Variável que controla o loop principal do sistema.
@@ -149,7 +145,7 @@ while (executando)
             case 8:
 
                 // Agenda uma execução da rotina de limpeza.
-                AgendamentoService.ExecutarComAtraso(new LimpezaTemp(), 5);
+                AgendamentoService.ExecutarComAtraso(new LimpezaTemp(usuario), 5);
                 break;
 
             case 0:

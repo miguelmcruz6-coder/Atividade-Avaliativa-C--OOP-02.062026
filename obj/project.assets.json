@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lucas\\Documents\\Teste-programas-que-nao-sao-sites\\02-06-2026\\02-06-2026.csproj",
+      "projectUniqueName": "C:\\Users\\lucas\\Documents\\Teste-programas-que-nao-sao-sites\\Atividade-Avaliativa-C--OOP-02.062026\\02-06-2026.csproj",
       "projectName": "02-06-2026",
-      "projectPath": "C:\\Users\\lucas\\Documents\\Teste-programas-que-nao-sao-sites\\02-06-2026\\02-06-2026.csproj",
+      "projectPath": "C:\\Users\\lucas\\Documents\\Teste-programas-que-nao-sao-sites\\Atividade-Avaliativa-C--OOP-02.062026\\02-06-2026.csproj",
       "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lucas\\Documents\\Teste-programas-que-nao-sao-sites\\02-06-2026\\obj\\",
+      "outputPath": "C:\\Users\\lucas\\Documents\\Teste-programas-que-nao-sao-sites\\Atividade-Avaliativa-C--OOP-02.062026\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config"

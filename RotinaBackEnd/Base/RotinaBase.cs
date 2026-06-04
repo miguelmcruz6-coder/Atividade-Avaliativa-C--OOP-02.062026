@@ -1,4 +1,6 @@
 using RotinaBackEnd.Interfaces;
+using RotinaBackEnd.Models;
+using RotinaBackEnd.Services;
 
 namespace RotinaBackEnd.Base
 {
@@ -12,6 +14,9 @@ namespace RotinaBackEnd.Base
         // Data de criação da rotina.
         public DateTime DataCriacao { get; private set; }
 
+        protected Usuario usuario = new Usuario();
+        protected LogService LogService;
+
         // Lista privada de logs.
         // Demonstra encapsulamento.
         private List<string> logs = new List<string>();
@@ -20,10 +25,12 @@ namespace RotinaBackEnd.Base
         private int quantidadeExecucoes;
 
         // Construtor da classe base.
-        protected RotinaBase(string nome)
+        protected RotinaBase(string nome, string nomeUsuario)
         {
             Nome = nome;
             DataCriacao = DateTime.Now;
+            usuario.Nome = nomeUsuario;
+            LogService = new LogService(usuario.Nome);
         }
 
         // Método obrigatório que será implementado

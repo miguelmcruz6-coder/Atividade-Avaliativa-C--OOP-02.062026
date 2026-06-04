@@ -6,7 +6,7 @@ namespace RotinaBackEnd.Rotinas
     // Rotina responsável por exibir informações do sistema
     public class DiagnosticoSistema : RotinaBase
     {
-        public DiagnosticoSistema() : base("Diagnóstico do Sistema"){}
+        public DiagnosticoSistema(string nome) : base("Diagnóstico do Sistema", nome){}
 
         public override void Executar()
         {

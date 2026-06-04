@@ -10,7 +10,7 @@ namespace RotinaBackEnd.Rotinas
         // Percentual de memória utilizado
         private double usoMemoria;
 
-        public MonitorMemoria() : base("Monitor de Memória"){}
+        public MonitorMemoria(string nome) : base("Monitor de Memória", nome){}
 
         public override void Executar()
         {
