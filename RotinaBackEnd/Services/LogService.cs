@@ -7,17 +7,21 @@ namespace RotinaBackEnd.Services
     {
         // Caminho do arquivo onde os logs serão armazenados
         private static string caminho { get; set; }
-        
+
         public LogService(string nomeUsuario)
         {
-            caminho = $"Atividade-Avaliativa-C--OOP-02.062026/Logs/{nomeUsuario}-log.txt";
+            caminho = Path.Combine(
+                "RotinaBackEnd",
+                "Logs",
+                $"{nomeUsuario}-log.txt"
+            );
         }
 
         // Salva uma mensagem de log no arquivo
         public static void Salvar(string mensagem)
         {
             // Garante que a pasta de logs exista
-            Directory.CreateDirectory("Atividade-Avaliativa-C--OOP-02.062026/Logs");
+            Directory.CreateDirectory(Path.Combine("RotinaBackEnd", "Logs"));
 
             // Adiciona a mensagem ao final do arquivo
             File.AppendAllText(
