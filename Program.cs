@@ -10,7 +10,6 @@ using RotinaBackEnd.Services;
 
 // Importa os modelos de dados.
 using RotinaBackEnd.Models;
-using RotinaBackEnd.Base;
 
 // =======================================================
 // CRIAÇÃO DO OBJETO USUÁRIO
