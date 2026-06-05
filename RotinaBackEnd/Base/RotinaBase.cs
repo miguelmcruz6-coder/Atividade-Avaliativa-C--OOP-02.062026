@@ -13,8 +13,6 @@ namespace RotinaBackEnd.Base
 
         // Data de criação da rotina.
         public DateTime DataCriacao { get; private set; }
-
-        protected Usuario usuario = new Usuario();
         protected LogService LogService;
 
         // Lista privada de logs.
@@ -29,8 +27,7 @@ namespace RotinaBackEnd.Base
         {
             Nome = nome;
             DataCriacao = DateTime.Now;
-            usuario.Nome = nomeUsuario;
-            LogService = new LogService(usuario.Nome);
+            LogService = new LogService(nomeUsuario);
         }
 
         // Método obrigatório que será implementado
