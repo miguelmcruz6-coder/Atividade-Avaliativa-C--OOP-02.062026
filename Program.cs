@@ -16,17 +16,19 @@ using RotinaBackEnd.Base;
 // CRIAÇÃO DO OBJETO USUÁRIO
 // =======================================================
 
+Usuario usuario = new Usuario();
+
 // Solicita o nome do usuário.
 Console.Write("Nome do usuário: ");
 
 // Armazena o valor digitado na propriedade Nome.
-string usuario = Console.ReadLine();
+usuario.Nome = Console.ReadLine();
 
 // Solicita o e-mail.
 Console.Write("E-mail: ");
 
 // Armazena o e-mail informado.
-string email = Console.ReadLine();
+usuario.Email = Console.ReadLine();
 
 // Exibe uma linha em branco para melhorar a visualização.
 Console.WriteLine();
@@ -59,11 +61,11 @@ Console.WriteLine($"Pasta backup: {config.PastaBackup}");
 // O uso da interface IRotina permite polimorfismo.
 List<IRotina> rotinas = new List<IRotina>()
 {
-    new LimpezaTemp(usuario),
-    new MonitorMemoria(usuario),
-    new BackupRotina(usuario),
-    new OrganizadorArquivos(usuario),
-    new DiagnosticoSistema(usuario)
+    new LimpezaTemp(usuario.Nome),
+    new MonitorMemoria(usuario.Nome),
+    new BackupRotina(usuario.Nome),
+    new OrganizadorArquivos(usuario.Nome),
+    new DiagnosticoSistema(usuario.Nome)
 };
 
 // Variável que controla o loop principal do sistema.
@@ -133,7 +135,6 @@ while (executando)
                 {
                     rotina.Executar();
                 }
-
                 break;
 
             case 7:
@@ -145,7 +146,7 @@ while (executando)
             case 8:
 
                 // Agenda uma execução da rotina de limpeza.
-                AgendamentoService.ExecutarComAtraso(new LimpezaTemp(usuario), 5);
+                AgendamentoService.ExecutarComAtraso(new LimpezaTemp(usuario.Nome), 5);
                 break;
 
             case 0:
@@ -163,13 +164,11 @@ while (executando)
     catch (FormatException)
     {
         // Captura erro quando o usuário digita letras.
-        Console.WriteLine(
-            "Digite apenas números.");
+        Console.WriteLine("Digite apenas números.");
     }
     catch (Exception ex)
     {
         // Captura qualquer outro erro não previsto.
-        Console.WriteLine(
-            $"Erro: {ex.Message}");
+        Console.WriteLine($"Erro: {ex.Message}");
     }
 }
